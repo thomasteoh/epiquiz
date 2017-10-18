@@ -1,3 +1,8 @@
+# -----
+# Epiquiz: a shiny app to present flash cards online
+# -----
+
+
 # Load gsheet library to read google sheets
 library(gsheet)
 
