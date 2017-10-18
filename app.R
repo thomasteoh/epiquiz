@@ -7,6 +7,7 @@
 library(gsheet)
 
 # Load data directly from the google sheets document
+# A Google Sheets document must be previously created (it is adviseable to use one from a Google Forms output) and publicly shared
 df0 <- gsheet2tbl('docs.google.com/spreadsheets/d/'sheetaddress)
 
 # Substitute LaTeX newlines for HTML newlines
