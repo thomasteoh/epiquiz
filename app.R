@@ -9,6 +9,7 @@ library(gsheet)
 # Load data directly from the google sheets document
 # A Google Sheets document must be previously created (it is adviseable to use one from a Google Forms output) and publicly shared
 # Make sure to replace sheetaddress with the address of the sheet, as obtained from the publicly shareable link
+# The structure of the sheet should include Theme Number, Question and Answer headings from which the data can be organised
 df0 <- gsheet2tbl('docs.google.com/spreadsheets/d/'sheetaddress)
 
 # Substitute LaTeX newlines for HTML newlines
