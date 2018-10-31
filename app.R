@@ -62,7 +62,8 @@ ui <- fluidPage(theme = "bootswatch.css", withMathJax(),
    )
 )
 
-server <- function(input, output) {
+# Define the server component of the shiny app
+server <- function(input, output, session) {
   # A count of the current question number. Goes up when you press button
   qcount <- reactiveValues(count = 1)
   observeEvent(input$do, qcount$count <- (qcount$count %% sum(df0$Theme.number == input$meeting)) + 1)
