@@ -8,3 +8,8 @@ Themes as described on the Shiny webpage:
 
 - https://shiny.rstudio.com/articles/css.html
 - http://bootswatch.com/
+
+
+# About
+
+This small app was created when we were studying for our Membership of the Australian and New Zealand College of Veterinary Scientists, epidemiology chapter examinations. A need was identified for a way of testing ourselves with some questions in a more distributable way than physical flash cards. As there were drawings, equations and different types of text, using markdown presented in a shiny app was considered ideal. 
