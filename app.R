@@ -66,6 +66,10 @@ ui <- fluidPage(theme = "bootswatch.css", withMathJax(),
 server <- function(input, output, session) {
   # A count of the current question number. Goes up when you press button
   qcount <- reactiveValues(count = 1)
+   
+  # Observing when the input has been activated
+  # Upon clicking the button, it will increment by one. 
+  # If it has hit the maximum number of questions, it will go back to the first question
   observeEvent(input$do, qcount$count <- (qcount$count %% sum(df0$Theme.number == input$meeting)) + 1)
   output$current <- renderText({paste(qcount$count, "/", sum(df0$Theme.number == input$meeting), sep = "")})
   # Question
