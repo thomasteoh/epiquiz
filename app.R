@@ -76,16 +76,17 @@ server <- function(input, output, session) {
   # It might be better to have each done as a reactive value in the future
   output$current <- renderText({paste(qcount$count, "/", sum(df0$Theme.number == input$meeting), sep = "")})
    
-  # Question
+  # Displays the current question
   output$question <- renderUI({
     HTML(paste0(df0[df0$Theme.number == input$meeting,"Question"][qcount$count]))
     })
-  # Hidden element with the answer
+  # An output to display the answer
+  # This output incorporates a routine to only show the answer if the showanswer tickbox has been selected
   output$answer <- renderUI({
     if (!input$showanswer) return()
     HTML(paste0(df0[df0$Theme.number == input$meeting, "Answer"][qcount$count]))
     })
-  # Seperate one rendering equations
+  # A separate output to render answers that have an equation in them
     output$equations <- renderUI({
     if (!input$showanswer) return()
     withMathJax(paste0(df0[df0$Theme.number == input$meeting, "Equations"][qcount$count]))
