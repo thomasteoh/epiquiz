@@ -71,7 +71,11 @@ server <- function(input, output, session) {
   # Upon clicking the button, it will increment by one. 
   # If it has hit the maximum number of questions, it will go back to the first question
   observeEvent(input$do, qcount$count <- (qcount$count %% sum(df0$Theme.number == input$meeting)) + 1)
+  
+  # Rendering the question number, out of the total number of questions
+  # It might be better to have each done as a reactive value in the future
   output$current <- renderText({paste(qcount$count, "/", sum(df0$Theme.number == input$meeting), sep = "")})
+   
   # Question
   output$question <- renderUI({
     HTML(paste0(df0[df0$Theme.number == input$meeting,"Question"][qcount$count]))
